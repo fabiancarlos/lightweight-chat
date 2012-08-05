@@ -211,30 +211,30 @@ img:focus { outline: none; }
 	right: 0px;
 }
 
-	#chat-box .user_info_box{ 
+	#chat-box #client_info_box{ 
 		width: 100%;
 		height: auto;
 		border-bottom: 1px solid #aaa;
 		background: #4CF;
 	}
 
-		#chat-box .user_info_box .name_user {
+		#chat-box #client_info_box .info {
 			color: #000;
 			padding: 7px;
 			overflow: hidden;
 		}
-			#chat-box .user_info_box .name_user .external_user{
+			#chat-box #client_info_box .info .external_user{
 				
 			}
 
-		#chat-box .user_info_box .status_chat{
+		#chat-box #client_info_box .status_chat{
 
 			position: absolute;
 			top: 5px;
 			right: 28px;
 		}
 
-		#chat-box .user_info_box a.close_chat_btn{
+		#chat-box #client_info_box a.close_chat_btn{
 			text-decoration: none;
 			font-weight: bold; 
 			font-size: 14px;

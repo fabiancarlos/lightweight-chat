@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+// require_once dirname(__FILE__)."/PDO4YOU/PDO4You.load.php";
+
+// PDO4You::getAvailableDrivers();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +29,7 @@
 	<p>...developing, yet! </p>
 
 	<br><br>
-	<a href="javascript:void(0)" id="start_chat">START USER CHAT</a>
+	<a href="javascript:void(0)" id="start_chat">START CHAT</a>
 
 </div>
 
@@ -43,8 +50,10 @@
 
 <!-- CHAT BOX -->
 <div id="chat-box">
-	<div class="user_info_box">
-		<div class="name_user">Fabian Carlos to "<span class="internal_user">Someone</span>" - <span class="ticket">Ticket: 323</span></div>
+	<div id="client_info_box">
+		<div class="info">
+			<span class="name">Someone</span> to "<span class="internal_user">Someone</span>" - <span class="subject">Something</span> - <span class="ticket">Ticket: 323</span>
+		</div>
 		<div class="status_chat">Status: <b class="green">ONLINE</b> </div>
 		<a class="close_chat_btn" href="javascript:void(0)" id="close_chat_box">X</a>
 	</div>

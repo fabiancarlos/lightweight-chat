@@ -6,8 +6,11 @@ var external_msg = "yow man!";
 var chat_box = "";
 var user_info_box = "";
 
-// nome do cliente
+// client name
 var client_name = "";
+
+// client subject
+var client_subject = "";
 
 // ticket de chamada
 var ticket = "";
@@ -40,11 +43,22 @@ jQuery(function($){
 	$('#call-ticket').click(function(event){
 		event.preventDefault();
 
-		app.open_chat_box($('form#form_call_chat'));
-
-		$('#chat-box').css('display', 'block');
+		// app.open_chat_box($('form#form_call_chat'));
 
 		$('#login-box').css('display', 'none');
+
+		// get the values of the inputs
+		client_name = $('#login-box #form_call_chat #client_name').val();
+		client_subject = $('#login-box #form_call_chat #client_subject').val();
+
+		// open the chat box
+		$('#chat-box').css('display', 'block');
+
+		// update the content of the chat box
+		$('#chat-box #client_info_box span.name').text(client_name);
+		$('#chat-box #client_info_box span.subject').text(client_subject);	
+		
+
 	});
 
 	// Close login to Chat
