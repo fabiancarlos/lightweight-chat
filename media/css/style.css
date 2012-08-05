@@ -1,7 +1,4 @@
 @charset "utf-8";
-/* ==========================================================================
-Author: FABIAN CARLOS | email: Fabian.pow@gmail.com 
-========================================================================== */
 
 /* PRESETS */
 * { margin:0px; padding:0px; }
@@ -78,9 +75,12 @@ img:focus { outline: none; }
 /* Some pre-class to use in application.js */
 
 .green{ color: green; }
-.red{ }
+.red{ color: red; }
+.gray{ color: gray; }
 
-/* END PRESETS */
+/* ==========================================================================
+   Author: FABIAN CARLOS | email: Fabian.pow@gmail.com 
+========================================================================== */
 
 #todo{ 
 	width: 800px; 
@@ -88,10 +88,12 @@ img:focus { outline: none; }
 }
 
 #todo a#start_chat{
-	text-align: center; 
+	text-align: center;
+	font: 16px Helvetica;
+	font-weight: bold;
 	color: #fff;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-	background: #fc4;
+	background: #fb0;
 	border: 1px solid #ea1;
 	padding: 8px 20px; 
 
@@ -116,11 +118,90 @@ img:focus { outline: none; }
 	transition: 0.2s linear;
 }
 
-/* BLOCO DO CHAT */
-#chat-box{ 
+/* LOGIN BOX 
+   ========================================================================== */
+
+#login-box{
+	display: none;
+	width: 300px;
+	height: 240px;
+	background: #f5f5f5;
+	border-right: 1px solid #AAA;
+	border-left: 1px solid #AAA;
+	border-top: 1px solid #AAA;
+	margin: 0px 20px 0px 0px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+	#login-box h2{
+		padding: 10px;
+		background: #cf2;
+		border-bottom: 1px solid #AAA;
+		position: relative;
+	}
+		#login-box h2 a.close{
+			text-decoration: none;
+			font-weight: bold; 
+			font-size: 28px;
+			color: #fff;
+			position: absolute;
+			right: 8px;
+			top: 0px;
+		}
+
+	#login-box #form_call_chat{
+		padding: 10px 15px 0px 10px;
+	}
+		#login-box #form_call_chat input[type=text]{
+			display: block;
+			width: 268px;
+			padding: 6px 0px 6px 8px;
+			margin: 10px 0px;
+			font-size: 18px;
+		}
+
+		#login-box #form_call_chat a#call-ticket{
+			width: 120px;
+			font: 16px Helvetica;
+			font-weight: bold;
+			display: block;
+			text-align: center; 
+			color: #fff;
+			text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+			background: #fb0;
+			border: 1px solid #ea1;
+			padding: 8px 20px;
+
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-ms-border-radius: 5px;
+			-o-border-radius: 5px;
+
+			-webkit-transition: 0.2s linear;
+			-moz-transition: 0.2s linear;
+			-ms-transition: 0.2s linear;
+			-o-transition: 0.2s linear;
+			transition: 0.2s linear;
+		}
+			#login-box #form_call_chat a#call-ticket:hover{
+				background: #fc7;
+				-webkit-transition: 0.2s linear;
+				-moz-transition: 0.2s linear;
+				-ms-transition: 0.2s linear;
+				-o-transition: 0.2s linear;
+				transition: 0.2s linear;
+			}
+
+
+/* CHAT BOX
+   ========================================================================== */
+
+#chat-box{
+	display: none;
 	width: 800px;
-	height: 350px;
-	padding-bottom: 40px;
+	height: 370px;
+	padding-bottom: 10px;
 	border-right: 1px solid #AAA;
 	border-left: 1px solid #AAA;
 	border-top: 1px solid #AAA;
@@ -188,19 +269,23 @@ img:focus { outline: none; }
 				color: #444;
 				font-weight: normal;
 			}
+
+			/* TEXTO/CONTEUDO DE ALGUM ERRO */
+			#chat-box .content_box span.chat_msg span.content_error{
+				color: #888;
+				font-weight: normal;
+			}
+
 	
 	#chat-box .people_box{
 		width: 200px;
 		height: 260px;
-
-
 		float: right;
-	
 	}
 
 	#chat-box textarea.message_box{
-		width: 97%;
+		width: 96%;
 		height: 50px;
-		margin: 6px;
+		margin: 8px;
 		padding: 5px;
 	}

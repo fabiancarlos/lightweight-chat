@@ -1,11 +1,3 @@
-<?php
-require_once dirname(__FILE__)."/classes/chat.php";
-
-$config = array();
-
-$chat = new Chat( $config );
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +16,6 @@ $chat = new Chat( $config );
 </head>
 <body>
 
-
 <div id="todo">
 	<h1>Lightweight Chat</h1>
 
@@ -35,13 +26,27 @@ $chat = new Chat( $config );
 
 </div>
 
+<!-- LOGIN BOX -->
+<div id="login-box">
+
+	<h2>Login to chat <a href="" class="close" id="close_login_box" >x</a></h2>
+
+	<form action="" method="post" id="form_call_chat">
+
+		<input type="text" name="client_name" id="client_name" placeholder="nome...">
+
+		<input type="text" name="client_subject" id="client_subject" placeholder="assunto...">
+
+		<a href="javascript:void(0)" id="call-ticket">GET TICKET</a>
+	</form>
+</div>
 
 <!-- CHAT BOX -->
 <div id="chat-box">
 	<div class="user_info_box">
-		<div class="name_user">Fabian Carlos to "<span class="external_user">Someone</span>"</div>
+		<div class="name_user">Fabian Carlos to "<span class="internal_user">Someone</span>" - <span class="ticket">Ticket: 323</span></div>
 		<div class="status_chat">Status: <b class="green">ONLINE</b> </div>
-		<a class="close_chat_btn" href="javascript:void(0)" onClick="app.close_chat_box('#chat-box')">X</a>
+		<a class="close_chat_btn" href="javascript:void(0)" id="close_chat_box">X</a>
 	</div>
 
 	<div class="content_box">
@@ -53,7 +58,7 @@ $chat = new Chat( $config );
 		
 	</div>
 
-	<textarea class="message_box" onkeydown="app.send_chat_msg( event , '.message_box', '.content_box', 'Fabian Carlos');"></textarea>
+	<textarea class="message_box" onkeydown="app.send_chat_msg( event , '.message_box', '.content_box', 'Fabian Carlos', 323);"></textarea>
 </div>
 
 
